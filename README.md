@@ -7,65 +7,33 @@ The interface needs to work on both desktop & mobile devices.
 
 In addition to your code, a README explaining your thought process and your choices would be appreciated.
 
-# Exercice :
+# Explanation :
 
-- Display a list of all the conversations
-- Allow the user to select a conversation
-  - Inside the conversation, there is a list of all the messages between these two users.
-  - As a user, you can type and send new messages in this conversation
+Time : approximately 5h I think 
 
-**As your application can be used by millions of users, make sure to provide some robust safety guards.**
+Hi, 
 
-### Sketches :
+For this test I've choosen to use Tailwind css for styling, because I think it's cool, tailwind is easy to understand, customizable,
+provides good features for responsive and I think I'am more productiv with.
+To fetch data i've used axios because I think axios provide more features and is better for typing with typescript than fetch api.
 
-Obvisouly, it is up to you to make something nice and pretty, you are free to design it the way you like. The sketches are here to give you an idea on how it should look.
+I've used React Context API to share the userId between components / pages, because if the tree grow we will can access the userId i think it can be useful in the future of the application.
+I've make an Layout component that accept children as props, so the header and the footer can be displayed in all the application.
 
-<details>
-  <summary>Click to see the sketches</summary>
-  
-Mobile list :
+I've started to create the conversation page where I display the list of conversations with a List-component inside this component there is a card component that display de conversations informations,
+this list component his memoized to avoid unwanted re-renders when his props doesn't change.
 
-![](./sketches/list-mobile.jpg)
+The next page that display chat contains one input component , and one message list with bubble component to display messages
 
-Desktop list :
+I've made the bonus1 you can create new conversations for a user, i've not respected exactly the swagger for this root because it was not corresponding with the already created data,
+so I've added some keys on the sended object of the POST request to match more the data provided.
 
-![](./sketches/list-desktop.jpg)
+There is some error messages on the constants file, I've hesitated to put this messages on ENV to change them without redeploying, just by restarting the container,
+but at the moment there are  in the constants files.
 
-Mobile conversation :
+I've tried to make something beautifuler than the sketches you provided, I hope you will appreciate it
 
-![](./sketches/conv-mobile.jpg)
+See you,
+Florian.
 
-Desktop conversation :
 
-![](./sketches/conv-desktop.jpg)
-
-</details>
-
-### API :
-
-You can find the API swagger file in `docs/api-swagger.yaml`.
-
-For a better readibility, you can view it on [https://leboncoin.tech/frontend-technical-test/](https://leboncoin.tech/frontend-technical-test/).
-
----
-
-## Bonus 1 :
-
-We provide some conversation samples, but can you improve the app so the user can now create new conversations ?
-
-## Bonus 2 :
-
-Our infrastructure is a bit shaky.. Sometimes the servers are crashing. “It’s not you, it’s me”, but maybe you can display something nice to warn the user and handle it gracefully.
-
-## Do you want to make the app even better ?
-
-Feel free to make as many improvements as you like.
-We love creativity and technical challenges.
-
-If you are out of ideas, here are some thoughts :
-
-- As we want to reach our users anywhere, we need to make sure the app is performing well. What can you do to make it really fast ?
-
-- Our goal is to support everybody in the country, including people with disabilities. As a good citizen and a good developer, can you make sure the app is accessible for everyone ?
-
-- We all love to relax after a hard day’s work. It would be a shame if we didn’t feel confident enough about the upcoming automatic deployment. Are you sure everything has been tested thoroughly ?
