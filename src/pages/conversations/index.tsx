@@ -53,8 +53,8 @@ const ConversationsPage: FC = () => {
       const conversationCreated = await newConversation(userId, recipientId, recipientNickname);
       router.push(`/conversations/${conversationCreated.id}/${conversationCreated.recipientId}`);
       setRefetch(true);
-    } catch (e) {
-      console.log(e);
+    } catch {
+      setErrorMessage(ERROR_MESSAGE_1);
     }
   };
 
